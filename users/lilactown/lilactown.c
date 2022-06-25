@@ -48,8 +48,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  TABL,    TABR,    KC_VOLU, RESET,   HOME,    KC_UP,   END,     KC_DEL,
-        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_VOLD, KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC,
+        KC_TAB,  SW_WIN,  TABL,    TABR,    KC_VOLU, RESET,   HOME,    KC_CAPS,   END,     KC_DEL,
+        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_BSPC,
         SPCL,    SPC_R,   BACK,    FWD,     KC_MPLY, XXXXXXX, KC_PGDN, KC_PGUP, SW_LANG, KC_ENT,
                                    _______, _______, _______, _______
     ),
