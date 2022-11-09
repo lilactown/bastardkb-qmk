@@ -34,6 +34,44 @@ enum keycodes {
     SW_LANG, // Switch to next input language (ctl-spc)
 };
 
+enum combos {
+  // default layer
+  PB_PASTE,
+  TG_COPY,
+  DV_CUT,
+
+  // nav layer
+  /* NAV_TAB_NEW, */
+  /* NAV_WIN_SWITCH, */
+  /* NAV_WIN_NEW, */
+
+  /* NAV_TAB_CLOSE, */
+  NAV_TAB_FIRST,
+  NAV_TAB_LAST,
+  COMBO_LENGTH
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
+
+const uint16_t PROGMEM pb_combo[] = {KC_P, KC_B, COMBO_END};
+const uint16_t PROGMEM tg_combo[] = {KC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM dv_combo[] = {KC_D, KC_V, COMBO_END};
+
+// nav layer
+const uint16_t PROGMEM nav_tab_first[] = {TABL, OS_SHFT, COMBO_END};
+const uint16_t PROGMEM nav_tab_last[] = {TABR, KC_HYPR, COMBO_END};
+
+combo_t key_combos[] = {
+  [PB_PASTE] = COMBO(pb_combo, G(KC_V)),
+  [TG_COPY] = COMBO(tg_combo, G(KC_C)),
+  [DV_CUT] = COMBO(dv_combo, G(KC_X)),
+
+  // nav layer
+  [NAV_TAB_FIRST] = COMBO(nav_tab_first, G(KC_1)),
+  [NAV_TAB_LAST] = COMBO(nav_tab_last, G(KC_9)),
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = LAYOUT_lilactown(
         KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT,
@@ -51,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAV] = LAYOUT_lilactown(
         KC_TAB,  SW_WIN,  BWINN,   TABL,    TABR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
+        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_HYPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
         SPCL,    SPC_R,   XXXXXXX, KC_VOLU, KC_VOLD, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
                                    _______, _______, _______, _______
     ),
