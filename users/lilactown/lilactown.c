@@ -9,10 +9,12 @@
 #define BACK G(KC_LBRC)
 #define TABL G(S(KC_LBRC))
 #define TABR G(S(KC_RBRC))
+#define BWINN G(KC_GRV) // cmd-` is used by most browsers to switch windows
 #define SPCL A(G(KC_LEFT))
 #define SPC_R A(G(KC_RGHT))
 #define LA_SYM MO(SYM)
 #define LA_NAV MO(NAV)
+#define APP_SCH G(KC_K) // cmd-k is used in a lot of apps as a search
 
 enum layers {
     DEF,
@@ -48,9 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  TABL,    TABR,    KC_VOLU, RESET,   HOME,    KC_CAPS,   END,     KC_DEL,
-        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_VOLD, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_BSPC,
-        SPCL,    SPC_R,   BACK,    FWD,     KC_MPLY, XXXXXXX, KC_PGDN, KC_PGUP, SW_LANG, KC_ENT,
+        KC_TAB,  SW_WIN,  BWINN,   TABL,    TABR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
+        SPCL,    SPC_R,   XXXXXXX, KC_VOLU, KC_VOLD, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
                                    _______, _______, _______, _______
     ),
 
