@@ -41,9 +41,9 @@ enum combos {
   DV_CUT,
 
   // nav layer
-  /* NAV_TAB_NEW, */
-  /* NAV_WIN_SWITCH, */
-  /* NAV_WIN_NEW, */
+  NAV_TAB_NEW,
+  NAV_WIN_SWITCH,
+  NAV_WIN_NEW,
 
   /* NAV_TAB_CLOSE, */
   NAV_TAB_FIRST,
@@ -60,13 +60,26 @@ const uint16_t PROGMEM dv_combo[] = {KC_D, KC_V, COMBO_END};
 // nav layer
 const uint16_t PROGMEM nav_tab_first[] = {TABL, OS_SHFT, COMBO_END};
 const uint16_t PROGMEM nav_tab_last[] = {TABR, KC_HYPR, COMBO_END};
+const uint16_t PROGMEM nav_tab_new[] = {TABL, TABR, COMBO_END};
+const uint16_t PROGMEM nav_win_switch[] = {OS_SHFT, KC_HYPR, COMBO_END};
+const uint16_t PROGMEM nav_win_new[] = {KC_VOLU, KC_VOLD, COMBO_END};
+
 
 combo_t key_combos[] = {
   [PB_PASTE] = COMBO(pb_combo, G(KC_V)),
   [TG_COPY] = COMBO(tg_combo, G(KC_C)),
   [DV_CUT] = COMBO(dv_combo, G(KC_X)),
 
+  //
   // nav layer
+  //
+
+  // horizontal
+  [NAV_TAB_NEW] = COMBO(nav_tab_new, G(KC_T)),
+  [NAV_WIN_SWITCH] = COMBO(nav_win_switch, G(KC_GRV)),
+  [NAV_WIN_NEW] = COMBO(nav_win_new, G(KC_N)),
+
+  // vertical
   [NAV_TAB_FIRST] = COMBO(nav_tab_first, G(KC_1)),
   [NAV_TAB_LAST] = COMBO(nav_tab_last, G(KC_9)),
 };
