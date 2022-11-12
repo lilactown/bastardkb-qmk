@@ -101,9 +101,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  BWINN,   TABL,    TABR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_TAB,  SW_WIN,  XXXXXXX,   TABL,    TABR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_HYPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
-        SPCL,    SPC_R,   XXXXXXX, KC_VOLU, KC_VOLD, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
+        SPCL,    SPC_R,   XXXXXXX, KC_VOLD, KC_VOLU, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
                                    _______, _______, _______, _______
     ),
 
