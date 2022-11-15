@@ -9,7 +9,6 @@
 #define BACK G(KC_LBRC)
 #define TABL G(S(KC_LBRC))
 #define TABR G(S(KC_RBRC))
-#define BWINN G(KC_GRV) // cmd-` is used by most browsers to switch windows
 #define SPCL A(G(KC_LEFT))
 #define SPC_R A(G(KC_RGHT))
 #define LA_SYM MO(SYM)
@@ -40,6 +39,9 @@ enum combos {
   TG_COPY,
   DV_CUT,
 
+  MN_Z,
+  KH_SCLN,
+
   // nav layer
   NAV_TAB_NEW,
   NAV_WIN_SWITCH,
@@ -57,6 +59,10 @@ const uint16_t PROGMEM pb_combo[] = {KC_P, KC_B, COMBO_END};
 const uint16_t PROGMEM tg_combo[] = {KC_T, KC_G, COMBO_END};
 const uint16_t PROGMEM dv_combo[] = {KC_D, KC_V, COMBO_END};
 
+const uint16_t PROGMEM mn_combo[] = {KC_M, KC_N, COMBO_END};
+const uint16_t PROGMEM kh_combo[] = {KC_K, KC_H, COMBO_END};
+
+
 // nav layer
 const uint16_t PROGMEM nav_tab_first[] = {TABL, OS_SHFT, COMBO_END};
 const uint16_t PROGMEM nav_tab_last[] = {TABR, KC_HYPR, COMBO_END};
@@ -70,6 +76,9 @@ combo_t key_combos[] = {
   [TG_COPY] = COMBO(tg_combo, G(KC_C)),
   [DV_CUT] = COMBO(dv_combo, G(KC_X)),
 
+  [MN_Z] = COMBO(mn_combo, KC_Z),
+  [KH_SCLN] = COMBO(kh_combo, KC_SCLN)
+
   //
   // nav layer
   //
@@ -82,6 +91,13 @@ combo_t key_combos[] = {
   // vertical
   [NAV_TAB_FIRST] = COMBO(nav_tab_first, G(KC_1)),
   [NAV_TAB_LAST] = COMBO(nav_tab_last, G(KC_9)),
+
+
+  //
+  // sym layer
+  //
+
+  // TODO excl
 };
 
 
@@ -101,9 +117,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  XXXXXXX,   TABL,    TABR,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_HYPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
-        SPCL,    SPC_R,   XXXXXXX, KC_VOLD, KC_VOLU, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT,
+        KC_TAB,  SW_WIN,  XXXXXXX,   TABL,    TABR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_HYPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT,
+        SPCL,    SPC_R,   XXXXXXX, KC_VOLD, KC_VOLU, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                    _______, _______, _______, _______
     ),
 
