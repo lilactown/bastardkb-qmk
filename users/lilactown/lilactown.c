@@ -39,8 +39,11 @@ enum combos {
   TG_COPY,
   DV_CUT,
 
-  MN_Z,
-  KH_SCLN,
+  PT_Z,
+  TD_V,
+
+  LN_SCLN,
+  NH_K,
 
   // nav layer
   NAV_TAB_NEW,
@@ -50,6 +53,12 @@ enum combos {
   /* NAV_TAB_CLOSE, */
   NAV_TAB_FIRST,
   NAV_TAB_LAST,
+
+  // sym layer
+  SYM_PLUS,
+  SYM_PERC,
+
+  SYM_EXCL,
   COMBO_LENGTH
 };
 
@@ -59,8 +68,11 @@ const uint16_t PROGMEM pb_combo[] = {KC_P, KC_B, COMBO_END};
 const uint16_t PROGMEM tg_combo[] = {KC_T, KC_G, COMBO_END};
 const uint16_t PROGMEM dv_combo[] = {KC_D, KC_V, COMBO_END};
 
-const uint16_t PROGMEM mn_combo[] = {KC_M, KC_N, COMBO_END};
-const uint16_t PROGMEM kh_combo[] = {KC_K, KC_H, COMBO_END};
+const uint16_t PROGMEM pt_combo[] = {KC_P, KC_T, COMBO_END};
+const uint16_t PROGMEM td_combo[] = {KC_T, KC_D, COMBO_END};
+
+const uint16_t PROGMEM ln_combo[] = {KC_L, KC_N, COMBO_END};
+const uint16_t PROGMEM nh_combo[] = {KC_N, KC_H, COMBO_END};
 
 
 // nav layer
@@ -70,14 +82,22 @@ const uint16_t PROGMEM nav_tab_new[] = {TABL, TABR, COMBO_END};
 const uint16_t PROGMEM nav_win_switch[] = {OS_SHFT, KC_HYPR, COMBO_END};
 const uint16_t PROGMEM nav_win_new[] = {KC_VOLU, KC_VOLD, COMBO_END};
 
+// sym layer
+const uint16_t PROGMEM unds_slsh_combo[] = {KC_UNDS, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM rparen_shift_combo[] = {KC_RPRN, OS_SHFT, COMBO_END};
+/* const uint16_t PROGMEM shift_bsls_combo[] = {OS_SHFT, KC_BSLS, COMBO_END}; */
 
 combo_t key_combos[] = {
   [PB_PASTE] = COMBO(pb_combo, G(KC_V)),
   [TG_COPY] = COMBO(tg_combo, G(KC_C)),
   [DV_CUT] = COMBO(dv_combo, G(KC_X)),
 
-  [MN_Z] = COMBO(mn_combo, KC_Z),
-  [KH_SCLN] = COMBO(kh_combo, KC_SCLN)
+  [PT_Z] = COMBO(pt_combo, KC_Z),
+  [TD_V] = COMBO(td_combo, KC_V),
+
+  [LN_SCLN] = COMBO(ln_combo, KC_SCLN),
+  [NH_K] = COMBO(nh_combo, KC_K),
+
 
   //
   // nav layer
@@ -97,6 +117,7 @@ combo_t key_combos[] = {
   // sym layer
   //
 
+  [UNDS_SLSH_PERC] = COMBO(unds_slsh_combo, KC_PERC),
   // TODO excl
 };
 
