@@ -117,7 +117,7 @@ combo_t key_combos[] = {
   // sym layer
   //
 
-  [UNDS_SLSH_PERC] = COMBO(unds_slsh_combo, KC_PERC),
+  /* [UNDS_SLSH_PERC] = COMBO(unds_slsh_combo, KC_PERC), */
   // TODO excl
 };
 
