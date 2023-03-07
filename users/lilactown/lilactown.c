@@ -39,11 +39,11 @@ enum combos {
   TG_COPY,
   DV_CUT,
 
-  PT_Z,
-  TD_V,
+  /* PT_Z, */
+  /* TD_V, */
 
   LN_SCLN,
-  NH_K,
+  /* NH_K, */
 
   // nav layer
   NAV_TAB_NEW,
@@ -55,10 +55,10 @@ enum combos {
   NAV_TAB_LAST,
 
   // sym layer
-  SYM_PLUS,
-  SYM_PERC,
+  /* SYM_PLUS, */
+  /* SYM_PERC, */
 
-  SYM_EXCL,
+  /* SYM_EXCL, */
   COMBO_LENGTH
 };
 
@@ -92,11 +92,11 @@ combo_t key_combos[] = {
   [TG_COPY] = COMBO(tg_combo, G(KC_C)),
   [DV_CUT] = COMBO(dv_combo, G(KC_X)),
 
-  [PT_Z] = COMBO(pt_combo, KC_Z),
-  [TD_V] = COMBO(td_combo, KC_V),
+  /* [PT_Z] = COMBO(pt_combo, KC_Z), */
+  /* [TD_V] = COMBO(td_combo, KC_V), */
 
   [LN_SCLN] = COMBO(ln_combo, KC_SCLN),
-  [NH_K] = COMBO(nh_combo, KC_K),
+  /* [NH_K] = COMBO(nh_combo, KC_K), */
 
 
   //
