@@ -46,6 +46,11 @@ enum combos {
   COMBO_PAREN_CLOSE,
   COMBO_SEMI,
 
+  // symbol layer
+  /* COMBO_PERCENT, */
+  /* COMBO_PLUS, */
+  /* COMBO_BSLASH, */
+
   COMBO_LENGTH
 };
 
@@ -54,7 +59,6 @@ uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this
 const uint16_t PROGMEM PB_combo[] = {KC_P, KC_B, COMBO_END};
 const uint16_t PROGMEM TG_combo[] = {KC_T, KC_G, COMBO_END};
 const uint16_t PROGMEM D_DOT_combo[] = {KC_D, KC_DOT, COMBO_END};
-
 const uint16_t PROGMEM WR_combo[] = {KC_W, KC_R, COMBO_END};
 const uint16_t PROGMEM FS_combo[] = {KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM PT_combo[] = {KC_P, KC_T, COMBO_END};
@@ -62,7 +66,6 @@ const uint16_t PROGMEM JM_combo[] = {KC_J, KC_M, COMBO_END};
 const uint16_t PROGMEM LN_combo[] = {KC_L, KC_N, COMBO_END};
 const uint16_t PROGMEM UE_combo[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM YI_combo[] = {KC_Y, KC_I, COMBO_END};
-
 const uint16_t PROGMEM NH_combo[] = {KC_N, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
@@ -91,9 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [SYM] = LAYOUT_lilactown(
-        KC_ESC,  KC_LBRC, KC_LCBR, KC_LPRN, KC_TILD, KC_CIRC, KC_RPRN, KC_RCBR, KC_RBRC, KC_GRV,
-        KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_SHFT,  OS_CMD, OS_ALT,  OS_CTRL,
-        KC_PLUS, KC_PIPE, KC_AT,   KC_SLSH, KC_PERC, KC_EXLM, KC_BSLS, KC_AMPR, KC_QUES, XXXXXXX,
+        KC_ESC,  KC_CIRC, KC_SCLN, KC_COLN, KC_TILD, KC_GRV,  KC_COMM, KC_DOT,  KC_DQT,  KC_QUOT,
+        KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,
+        KC_PLUS, KC_PERC, KC_AT,   KC_SLSH, KC_PERC, KC_EXLM, KC_BSLS, KC_AMPR, KC_QUES, XXXXXXX,
                                    _______, _______, _______, _______
     ),
 
@@ -107,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NUM] = LAYOUT_lilactown(
         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
         OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_F11,  KC_F10,  OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,
-        RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_F1,   KC_F2,  KC_F3,   KC_F4,   KC_F5,
+        RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,
                                    _______, _______, _______, _______
     ),
 };
