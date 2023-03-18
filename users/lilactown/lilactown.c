@@ -35,112 +35,72 @@ enum keycodes {
 
 enum combos {
   // default layer
-  PB_PASTE,
-  TG_COPY,
-  DV_CUT,
+  COMBO_CUT,
+  COMBO_COPY,
+  COMBO_PASTE,
+  COMBO_BRACKET_OPEN,
+  COMBO_BRACKET_CLOSE,
+  COMBO_CURLY_OPEN,
+  COMBO_CURLY_CLOSE,
+  COMBO_PAREN_OPEN,
+  COMBO_PAREN_CLOSE,
+  COMBO_SEMI,
 
-  /* PT_Z, */
-  /* TD_V, */
-
-  LN_SCLN,
-  /* NH_K, */
-
-  // nav layer
-  NAV_TAB_NEW,
-  NAV_WIN_SWITCH,
-  NAV_WIN_NEW,
-
-  /* NAV_TAB_CLOSE, */
-  NAV_TAB_FIRST,
-  NAV_TAB_LAST,
-
-  // sym layer
-  /* SYM_PLUS, */
-  /* SYM_PERC, */
-
-  /* SYM_EXCL, */
   COMBO_LENGTH
 };
 
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
 
-const uint16_t PROGMEM pb_combo[] = {KC_P, KC_B, COMBO_END};
-const uint16_t PROGMEM tg_combo[] = {KC_T, KC_G, COMBO_END};
-const uint16_t PROGMEM dv_combo[] = {KC_D, KC_V, COMBO_END};
+const uint16_t PROGMEM PB_combo[] = {KC_P, KC_B, COMBO_END};
+const uint16_t PROGMEM TG_combo[] = {KC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM D_DOT_combo[] = {KC_D, KC_DOT, COMBO_END};
 
-const uint16_t PROGMEM pt_combo[] = {KC_P, KC_T, COMBO_END};
-const uint16_t PROGMEM td_combo[] = {KC_T, KC_D, COMBO_END};
+const uint16_t PROGMEM WR_combo[] = {KC_W, KC_R, COMBO_END};
+const uint16_t PROGMEM FS_combo[] = {KC_F, KC_S, COMBO_END};
+const uint16_t PROGMEM PT_combo[] = {KC_P, KC_T, COMBO_END};
+const uint16_t PROGMEM JM_combo[] = {KC_J, KC_M, COMBO_END};
+const uint16_t PROGMEM LN_combo[] = {KC_L, KC_N, COMBO_END};
+const uint16_t PROGMEM UE_combo[] = {KC_U, KC_E, COMBO_END};
+const uint16_t PROGMEM YI_combo[] = {KC_Y, KC_I, COMBO_END};
 
-const uint16_t PROGMEM ln_combo[] = {KC_L, KC_N, COMBO_END};
-const uint16_t PROGMEM nh_combo[] = {KC_N, KC_H, COMBO_END};
-
-
-// nav layer
-const uint16_t PROGMEM nav_tab_first[] = {TABL, OS_SHFT, COMBO_END};
-const uint16_t PROGMEM nav_tab_last[] = {TABR, KC_HYPR, COMBO_END};
-const uint16_t PROGMEM nav_tab_new[] = {TABL, TABR, COMBO_END};
-const uint16_t PROGMEM nav_win_switch[] = {OS_SHFT, KC_HYPR, COMBO_END};
-const uint16_t PROGMEM nav_win_new[] = {KC_VOLU, KC_VOLD, COMBO_END};
-
-// sym layer
-const uint16_t PROGMEM unds_slsh_combo[] = {KC_UNDS, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM rparen_shift_combo[] = {KC_RPRN, OS_SHFT, COMBO_END};
-/* const uint16_t PROGMEM shift_bsls_combo[] = {OS_SHFT, KC_BSLS, COMBO_END}; */
+const uint16_t PROGMEM NH_combo[] = {KC_N, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
-  [PB_PASTE] = COMBO(pb_combo, G(KC_V)),
-  [TG_COPY] = COMBO(tg_combo, G(KC_C)),
-  [DV_CUT] = COMBO(dv_combo, G(KC_X)),
+  // default
+  [COMBO_CUT] = COMBO(D_DOT_combo, G(KC_X)),
+  [COMBO_COPY] = COMBO(TG_combo, G(KC_C)),
+  [COMBO_PASTE] = COMBO(PB_combo, G(KC_V)),
 
-  /* [PT_Z] = COMBO(pt_combo, KC_Z), */
-  /* [TD_V] = COMBO(td_combo, KC_V), */
+  [COMBO_BRACKET_OPEN] = COMBO(WR_combo, KC_LBRC),
+  [COMBO_CURLY_OPEN] = COMBO(FS_combo, KC_LCBR),
+  [COMBO_PAREN_OPEN] = COMBO(PT_combo, KC_LPRN),
+  [COMBO_PAREN_CLOSE] = COMBO(LN_combo, KC_RBRC),
+  [COMBO_CURLY_CLOSE] = COMBO(UE_combo, KC_RCBR),
+  [COMBO_BRACKET_CLOSE] = COMBO(YI_combo, KC_RPRN),
 
-  [LN_SCLN] = COMBO(ln_combo, KC_SCLN),
-  /* [NH_K] = COMBO(nh_combo, KC_K), */
-
-
-  //
-  // nav layer
-  //
-
-  // horizontal
-  [NAV_TAB_NEW] = COMBO(nav_tab_new, G(KC_T)),
-  [NAV_WIN_SWITCH] = COMBO(nav_win_switch, G(KC_GRV)),
-  [NAV_WIN_NEW] = COMBO(nav_win_new, G(KC_N)),
-
-  // vertical
-  [NAV_TAB_FIRST] = COMBO(nav_tab_first, G(KC_1)),
-  [NAV_TAB_LAST] = COMBO(nav_tab_last, G(KC_9)),
-
-
-  //
-  // sym layer
-  //
-
-  /* [UNDS_SLSH_PERC] = COMBO(unds_slsh_combo, KC_PERC), */
-  // TODO excl
+  [COMBO_SEMI] = COMBO(NH_combo, KC_SCLN),
 };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = LAYOUT_lilactown(
-        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT,
+        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_Z,
         KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
-        KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SCLN,
-                                   LA_NAV,  KC_SPC,  KC_LSFT,  LA_SYM
+        KC_COMM, KC_V,    KC_C,    KC_D,    KC_DOT,  KC_SCLN, KC_H,    KC_K,    KC_X,    KC_QUOT,
+                                   LA_NAV,  KC_SPC,  KC_LSFT, LA_SYM
     ),
 
     [SYM] = LAYOUT_lilactown(
         KC_ESC,  KC_LBRC, KC_LCBR, KC_LPRN, KC_TILD, KC_CIRC, KC_RPRN, KC_RCBR, KC_RBRC, KC_GRV,
         KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_SHFT,  OS_CMD, OS_ALT,  OS_CTRL,
-        KC_PLUS, KC_PIPE, KC_AT,   KC_SLSH, KC_PERC, XXXXXXX, KC_BSLS, KC_AMPR, KC_QUES, KC_EXLM,
+        KC_PLUS, KC_PIPE, KC_AT,   KC_SLSH, KC_PERC, KC_EXLM, KC_BSLS, KC_AMPR, KC_QUES, XXXXXXX,
                                    _______, _______, _______, _______
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  XXXXXXX,   TABL,    TABR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
-        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_HYPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT,
-        SPCL,    SPC_R,   XXXXXXX, KC_VOLD, KC_VOLU, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_TAB,  SW_WIN,  TABL,    TABR,    G(KC_N),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+        OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, G(KC_GRV), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT,
+        SPCL,    SPC_R,   KC_VOLD, KC_VOLU, XXXXXXX,   XXXXXXX, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX,
                                    _______, _______, _______, _______
     ),
 
