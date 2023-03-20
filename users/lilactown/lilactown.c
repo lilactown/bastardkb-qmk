@@ -49,7 +49,7 @@ enum combos {
   // symbol layer
   /* COMBO_PERCENT, */
   /* COMBO_PLUS, */
-  /* COMBO_BSLASH, */
+  COMBO_BSLS,
 
   COMBO_LENGTH
 };
@@ -68,7 +68,7 @@ const uint16_t PROGMEM UE_combo[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM YI_combo[] = {KC_Y, KC_I, COMBO_END};
 const uint16_t PROGMEM NH_combo[] = {KC_N, KC_H, COMBO_END};
 
-const uint16_t PROGMEM UNDS_SLSH_combo[] = {KC_UNDS, KC_SLSH};
+const uint16_t PROGMEM UNDS_SLSH_combo[] = {KC_UNDS, KC_SLSH, COMBO_END};
 
 combo_t key_combos[] = {
   // default
@@ -86,7 +86,7 @@ combo_t key_combos[] = {
   [COMBO_SEMI] = COMBO(NH_combo, KC_SCLN),
 
   // symbols
-  /* [COMBO_BSLS] = COMBO(BANG_AMPR_combo, KC_BSLS) */
+  [COMBO_BSLS] = COMBO(UNDS_SLSH_combo, KC_BSLS),
 };
 
 
