@@ -77,9 +77,9 @@ combo_t key_combos[] = {
   [COMBO_BRACKET_OPEN] = COMBO(WR_combo, KC_LBRC),
   [COMBO_CURLY_OPEN] = COMBO(FS_combo, KC_LCBR),
   [COMBO_PAREN_OPEN] = COMBO(PT_combo, KC_LPRN),
-  [COMBO_PAREN_CLOSE] = COMBO(LN_combo, KC_RBRC),
+  [COMBO_PAREN_CLOSE] = COMBO(LN_combo, KC_RPRN),
   [COMBO_CURLY_CLOSE] = COMBO(UE_combo, KC_RCBR),
-  [COMBO_BRACKET_CLOSE] = COMBO(YI_combo, KC_RPRN),
+  [COMBO_BRACKET_CLOSE] = COMBO(YI_combo, KC_RBRC),
 
   [COMBO_SEMI] = COMBO(NH_combo, KC_SCLN),
 };
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SYM] = LAYOUT_lilactown(
         KC_ESC,  KC_CIRC, KC_SCLN, KC_COLN, KC_TILD, KC_GRV,  KC_COMM, KC_DOT,  KC_DQT,  KC_QUOT,
         KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,
-        KC_PLUS, KC_PERC, KC_AT,   KC_SLSH, KC_PERC, KC_EXLM, KC_BSLS, KC_AMPR, KC_QUES, XXXXXXX,
+        KC_PLUS, KC_PERC, KC_AT,   KC_SLSH, KC_PERC, KC_BSLS, KC_EXLM, KC_AMPR, KC_QUES, XXXXXXX,
                                    _______, _______, _______, _______
     ),
 
