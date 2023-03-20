@@ -68,6 +68,8 @@ const uint16_t PROGMEM UE_combo[] = {KC_U, KC_E, COMBO_END};
 const uint16_t PROGMEM YI_combo[] = {KC_Y, KC_I, COMBO_END};
 const uint16_t PROGMEM NH_combo[] = {KC_N, KC_H, COMBO_END};
 
+const uint16_t PROGMEM UNDS_SLSH_combo[] = {KC_UNDS, KC_SLSH};
+
 combo_t key_combos[] = {
   // default
   [COMBO_CUT] = COMBO(D_DOT_combo, G(KC_X)),
@@ -82,6 +84,9 @@ combo_t key_combos[] = {
   [COMBO_BRACKET_CLOSE] = COMBO(YI_combo, KC_RBRC),
 
   [COMBO_SEMI] = COMBO(NH_combo, KC_SCLN),
+
+  // symbols
+  /* [COMBO_BSLS] = COMBO(BANG_AMPR_combo, KC_BSLS) */
 };
 
 
@@ -101,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT_lilactown(
-        KC_TAB,  SW_WIN,  TABL,    TABR,    G(KC_N),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
+        KC_TAB,  SW_WIN,  TABL,    TABR,    G(KC_T),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
         OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, G(KC_GRV), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT,
         SPCL,    SPC_R,   KC_VOLD, KC_VOLU, XXXXXXX,   XXXXXXX, APP_SCH, XXXXXXX, XXXXXXX, XXXXXXX,
                                    _______, _______, _______, _______
